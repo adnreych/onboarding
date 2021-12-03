@@ -20,8 +20,8 @@ public class JiraController {
 		this.jiraService = jiraService;
 	}
 
-	@GetMapping("/api/tasks")
-	public Iterable<JiraTaskEntity> tasks(Long userId) {
+	@GetMapping("/api/tasks/{userId}")
+	public Iterable<JiraTaskEntity> tasks(@PathVariable String userId) {
 		return jiraService.getAll(userId);
 	}
 

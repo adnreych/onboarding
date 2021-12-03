@@ -19,8 +19,9 @@ public class JiraService {
         this.jiraPageRepository = jiraPageRepository;
     }
 
-    public Iterable<JiraTaskEntity> getAll(Long userId) {
-        return jiraPageRepository.findAllByUserId(userId);
+    public Iterable<JiraTaskEntity> getAll(String userId) {
+        long l = Long.parseLong(userId);
+        return jiraPageRepository.findAllByUserId(l);
     }
 
 }
