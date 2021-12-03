@@ -1,0 +1,35 @@
+package ru.psbank.onboarding.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.RedirectViewControllerRegistration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * Веб-конфиг для настройки серверной части
+ */
+@Configuration
+public class MvcConfig implements WebMvcConfigurer {
+
+	@Override
+    public void addResourceHandlers(
+      ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/** **")
+          .addResourceLocations("/WEB-INF/classes/static/build/static/");
+        registry.addResourceHandler("/**.js")
+          .addResourceLocations("/WEB-INF/classes/static/build/");
+        registry.addResourceHandler("/**.json")
+          .addResourceLocations("/WEB-INF/classes/static/build/");
+        registry.addResourceHandler("/**.ico")
+          .addResourceLocations("/WEB-INF/classes/static/build/");
+        registry.addResourceHandler("/index.html")
+          .addResourceLocations("/WEB-INF/classes/static/build/index.html");
+    }
+	
+	@Override
+	public void addViewControllers (ViewControllerRegistry registry) {
+	  RedirectViewControllerRegistration r = registry.addRedirectViewController("/loadregisters", "/");
+	}
+	
+}
