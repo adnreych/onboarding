@@ -1,4 +1,4 @@
-## PSB-onboarding -- backend
+## PSB-onboarding - прототип команды 1DevFull участника финала Цифрового прорыва 2021 -- backend
 
 Ссылка на front-end часть - https://github.com/kirillnepomiluev/psbonboardingIT
 
