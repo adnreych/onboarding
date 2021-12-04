@@ -1,5 +1,7 @@
 ## PSB-onboarding -- backend
 
+Ссылка на front-end часть - https://github.com/kirillnepomiluev/psbonboardingIT
+
 ### Инструкция по установке
 На машине, где будет происходить развертывание должен стоять Docker
 
